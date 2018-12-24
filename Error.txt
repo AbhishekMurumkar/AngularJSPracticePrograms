@@ -1,0 +1,2 @@
+1)Port Already in use = open task-manager and kill the node js process
+2)var undefined = placed , in place of ; at first line

@@ -1,0 +1,6 @@
+<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+    <!-- the span will be displayed only if the expression in the ng-show attribute returns true. -->
+</form>

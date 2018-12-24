@@ -1,0 +1,86 @@
+Node.js allows you to run JavaScript on the server.
+
+What is Node.js?
+    Node.js is an open source server environment
+    Node.js is free
+    Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)
+    Node.js uses JavaScript on the server
+
+Here is how Node.js handles a file request:
+    Sends the task to the computer's file system.
+    Ready to handle the next request.
+    When the file system has opened and read the file, the server returns the content to the client.
+    Node.js eliminates the waiting, and simply continues with the next request.
+    Node.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient.
+
+What is a Node.js File?
+    Node.js files contain tasks that will be executed on certain events
+    A typical event is someone trying to access a port on the server
+    Node.js files must be initiated on the server before having any effect
+    Node.js files have extension ".js"
+    see first.js
+
+Modulus in Node JS : JavaScript libraries.
+=Create Your Own Modules : Use the exports keyword to make properties and methods available outside the module file.
+exports.myModule = function () {
+    //code
+};
+=To include a module, use the require() function with the name of the module.
+var http = require('http');
+NOTE: we use ./module to locate the module, when it is located in the same folder as the Node.js file.
+Built _ In Modulus :
+        assert	            Provides a set of assertion tests
+        buffer	            To handle binary data
+        child_process	To run a child process
+        cluster         	To split a single Node process into multiple processes
+        crypto	            To handle OpenSSL cryptographic functions
+        dgram	            Provides implementation of UDP datagram sockets
+        dns	                To do DNS lookups and name resolution functions
+        domain	        Deprecated. To handle unhandled errors
+        events	            To handle events
+        fs	                    To handle the file system
+        http	                To make Node.js act as an HTTP server
+        https	            To make Node.js act as an HTTPS server.
+        net	                To create servers and clients
+        os	                    Provides information about the operation system
+        path	                To handle file paths
+        punycode	        Deprecated. A character encoding scheme
+        querystring	    To handle URL query strings
+        readline	        To handle readable streams one line at the time
+        stream	            To handle streaming data
+        string_decoder	To decode buffer objects into strings
+        timers	            To execute a function after a given number of milliseconds
+        tls	                To implement TLS and SSL protocols
+        tty	                Provides classes used by a text terminal
+        url	                To parse URL strings
+        util	                To access utility functions
+        v8	                    To access information about V8 (the JavaScript engine)
+        vm	                To compile JavaScript code in a virtual machine
+        zlib	                To compress or decompress files
+
+HTTP Module :
+Node.js as a Web Server
+        var http = require('http');
+        //create a server object:
+        http.createServer(function (req, res) {
+
+         res.writeHead(200, {'Content-Type': 'text/html'}); //Add an HTTP Header.200 means that all is OK, the second argument is an object containing the response headers.
+
+          res.write('Hello World!'); //write a response to the client
+
+          res.write(req.url);//req has a property called "url" which holds the part of the url used to Read the Query String
+          <code>"http://localhost:8080/summer" returns "/summer"</code>
+
+          Thus after getting the query we need to Split the Query String to understandable format via parse function
+            var q = url.parse(req.url, true).query;
+            var txt = q.year + " " + q.month;
+            o/p: http://localhost:8080/?year=2017&month=July  as 2017 July
+
+          res.end(); //end the response
+
+        }).listen(8080); //the server object listens on port 8080
+
+
+FS Module :  allows you to work with the file system on your computer.
+var fs = require('fs');
+(1) Read Files

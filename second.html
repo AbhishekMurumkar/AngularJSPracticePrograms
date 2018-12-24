@@ -1,0 +1,9 @@
+<input type="text" id="text-box" size="20" value="Mozilla">
+<button onclick="selectText()">Select text</button>
+<script>
+    function selectText() {
+        const input = document.getElementById('text-box');
+        input.focus();
+        input.setSelectionRange(2, 5);
+    }
+</script>

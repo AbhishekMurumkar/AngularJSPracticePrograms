@@ -1,0 +1,21 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<style>
+input.ng-invalid {
+    background-color: lightblue;
+}
+input.ng-valid {
+    background-color: green;
+}
+input.ng-dirty {
+    background-color: red;
+}
+input.ng-touched {
+    background-color: cyan;
+}
+</style>
+
+<form ng-app="" name="myForm">
+    Enter your name:
+    <input name="myName" ng-model="myText" required>
+</form>
